@@ -32,7 +32,7 @@ zookeeper:
 # If your Kubernetes cluster does not support LoadBalancer,
 # comment out the line below for the helm chart to succeed or add
 # the correct serviceType for your cluster.
-# serviceType: LoadBalancer
+serviceType: ClusterIP
 
 # If the loadBalancer supports sessionAffinity and
 # you have one or more coordinators, enable it
@@ -42,11 +42,11 @@ zookeeper:
 # for the LoadBalancer's external IP.
 # The chart is setup for internal IP support for AKS, EKS, GKE.
 # For more information, see https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer
-#internalLoadBalancer: true
+# internalLoadBalancer: true
 
 # To use custom storage class, uncomment and provide the value here.
 # Otherwise the default storage class configured for your K8S cluster is used.
-#storageClass: managed-premium
+storageClass: premium
 
 # For private and protected docker image repository, you should store
 # the credentials in a kubernetes secret and provide the secret name here.
