@@ -19,13 +19,13 @@ spec:
   - port: {{ .Values.coordinator.client.port | default 31010 }}
     targetPort: 31010
     {{- if eq .Values.serviceType "NodePort" }}
-    nodePort: {{ int .Values.coordinator.client.port | default 31010 }}
+    nodePort: {{ .Values.coordinator.client.port | int }}
     {{- end }}
     name: client
   - port: {{ .Values.coordinator.web.port | default 9047 }}
     targetPort: 9047
     {{- if eq .Values.serviceType "NodePort" }}
-    nodePort: {{ int .Values.coordinator.web.port | default 9047 }}
+    nodePort: {{ .Values.coordinator.web.port | int }}
     {{- end }}}}
     name: web
   selector:

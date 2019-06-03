@@ -3,7 +3,7 @@
 # the pods are using the same version of the software.
 image: 
   repository: dremio/dremio-oss:latest
-  tag: 0.0.1
+  tag: 0.0.2
   pullPolicy: Always
 
 
