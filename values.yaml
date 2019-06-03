@@ -1,7 +1,11 @@
 # The image used to build the Dremio cluster. It is recommended to update the
 # version tag to the version that you are using. This will ensure that all
 # the pods are using the same version of the software.
-image: dremio/dremio-oss:latest
+image: 
+  repository: dremio/dremio-oss:latest
+  tag: 0.0.1
+  pullPolicy: Always
+
 
 # Check out Dremio documentation for memory and cpu requirements for
 # the coordinators and the executors.
