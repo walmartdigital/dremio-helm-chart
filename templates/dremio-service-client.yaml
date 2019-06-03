@@ -26,7 +26,7 @@ spec:
     targetPort: 9047
     {{- if eq .Values.serviceType "NodePort" }}
     nodePort: {{ .Values.coordinator.web.port | int }}
-    {{- end }}}}
+    {{- end }}
     name: web
   selector:
     app: dremio-coordinator
