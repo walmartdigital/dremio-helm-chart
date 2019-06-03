@@ -10,6 +10,6 @@ entries:
     - data
     name: dremio-chart
     urls:
-    - dremio-chart-0.0.7.tgz
-    version: 0.0.7
+    - dremio-chart-0.1.1-0.0.7.tgz
+    version: 0.1.1-0.0.7
 generated: 2019-05-30T12:12:08.341962-04:00
