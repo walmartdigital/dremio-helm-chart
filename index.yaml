@@ -2,8 +2,8 @@ apiVersion: v1
 entries:
   dremio-chart:
   - apiVersion: v1
-    created: 2019-06-03T12:13:38.148718-04:00
-    digest: 6af6c1d983527731944f07268be517c4ab37686d3a694e5038f636c4f41788f1
+    created: 2019-06-03T12:17:47.815157-04:00
+    digest: a4d065ec16cf099314600e8932589d634154068c03c7f6666c0ed549548b7ca2
     home: https://www.dremio.com/
     keywords:
     - dremio
@@ -12,4 +12,4 @@ entries:
     urls:
     - dremio-chart-0.0.7.tgz
     version: 0.0.7
-generated: 2019-06-03T12:13:38.114851-04:00
+generated: 2019-06-03T12:17:47.755289-04:00

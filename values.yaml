@@ -3,7 +3,7 @@
 # the pods are using the same version of the software.
 image: 
   repository: dremio/dremio-oss:latest
-  tag: 0.0.2
+  tag: 0.1.0
   pullPolicy: Always
 
 
@@ -19,8 +19,10 @@ coordinator:
   count: 0
   web:
     port: 9047
+    nodePort: 31011
   client:
     port: 31010
+    nodePort: 31010
   volumeSize: 100Gi
 executor:
   memory: 122880
