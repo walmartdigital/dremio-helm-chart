@@ -31,8 +31,11 @@ spec:
         image: {{.Values.image}}
         imagePullPolicy: IfNotPresent
         resources:
+          limits:
+            memory: {{.Values.executor.memory}}Mi
+            cpu: {{.Values.executor.cpu}}
           requests:
-            memory: {{.Values.executor.memory}}M
+            memory: {{.Values.executor.memory}}Mi
             cpu: {{.Values.executor.cpu}}
         volumeMounts:
         - name: dremio-executor-volume
