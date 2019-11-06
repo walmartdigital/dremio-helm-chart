@@ -22,11 +22,13 @@ executor:
   cpu: 15
   count: 3
   volumeSize: 100Gi
-zookeeper:
-  memory: 1024
-  cpu: 0.5
-  count: 3
-  volumeSize: 10Gi
+# zookeeper:
+#   memory: 1024
+#   cpu: 0.5
+#   count: 3
+#   volumeSize: 10Gi
+
+zetcd: true
 
 # To create a TLS secret, use the following command:
 # kubectl create secret tls ${TLS_SECRET_NAME} --key ${KEY_FILE} --cert ${CERT_FILE}
