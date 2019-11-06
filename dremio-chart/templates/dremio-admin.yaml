@@ -12,16 +12,13 @@ metadata:
 spec:
   containers:
   - name: dremio-admin
-    image: {{.Values.image}}
+    image: {{.Values.image}}:{{.Values.imageTag}}
     imagePullPolicy: IfNotPresent
     stdin: true
     tty: true
     resources:
-      limits:
-        memory: {{.Values.coordinator.memory}}Mi
-        cpu: {{.Values.coordinator.cpu}}
       requests:
-        memory: {{.Values.coordinator.memory}}Mi
+        memory: {{.Values.coordinator.memory}}M
         cpu: {{.Values.coordinator.cpu}}
     volumeMounts:
     - name: dremio-master-volume
