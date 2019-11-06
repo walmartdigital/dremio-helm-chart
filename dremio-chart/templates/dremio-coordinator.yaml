@@ -28,14 +28,11 @@ spec:
       {{- end }}
       containers:
       - name: dremio-coordinator
-        image: {{.Values.image}}
+        image: {{.Values.image}}:{{.Values.imageTag}}
         imagePullPolicy: IfNotPresent
         resources:
-          limits:
-            memory: {{.Values.coordinator.memory}}Mi
-            cpu: {{.Values.coordinator.cpu}}
           requests:
-            memory: {{.Values.coordinator.memory}}Mi
+            memory: {{.Values.coordinator.memory}}M
             cpu: {{.Values.coordinator.cpu}}
         volumeMounts:
         - name: dremio-config
@@ -73,7 +70,7 @@ spec:
         command:  ["sh", "-c", "until nc -z dremio-client {{ .Values.coordinator.web.port | default 9047 }} > /dev/null; do echo waiting for dremio master; sleep 2; done;"]
       {{- if .Values.tls.ui.enabled }}
       - name: generate-ui-keystore
-        image: {{.Values.image}}
+        image: {{.Values.image}}:{{.Values.imageTag}}
         imagePullPolicy: IfNotPresent
         volumeMounts:
         - name: dremio-tls
@@ -95,7 +92,7 @@ spec:
       {{- end }}
       {{- if .Values.tls.client.enabled }}
       - name: generate-client-keystore
-        image: {{.Values.image}}
+        image: {{.Values.image}}:{{.Values.imageTag}}
         imagePullPolicy: IfNotPresent
         volumeMounts:
         - name: dremio-tls
