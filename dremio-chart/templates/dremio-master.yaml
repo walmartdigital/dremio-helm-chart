@@ -81,7 +81,7 @@ spec:
             scheme: HTTPS
             {{- end }}
             port: 9047
-          initialDelaySeconds: 5
+          initialDelaySeconds: 60
           periodSeconds: 5
       initContainers:
       - name: start-only-one-master
