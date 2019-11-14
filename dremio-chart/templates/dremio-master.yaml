@@ -103,6 +103,10 @@ spec:
         args:
         - "dremio:dremio"
         - "/opt/dremio/data"
+      - name: sleep-120
+        image: busybox
+        imagePullPolicy: IfNotPresent
+        command: ["sh", "-c", "sleep 120"]
       - name: upgrade-task
         image: {{.Values.image}}:{{.Values.imageTag}}
         imagePullPolicy: IfNotPresent
