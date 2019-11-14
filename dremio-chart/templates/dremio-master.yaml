@@ -90,6 +90,10 @@ spec:
       - name: wait-for-zk
         image: busybox
         command:  ["sh", "-c", "until echo ok | nc zk-hs 2181 > /dev/null; do echo waiting for zookeeper host; sleep 2; done;"]
+      - name: sleep-300
+        image: busybox
+        imagePullPolicy: IfNotPresent
+        command: ["sh", "-c", "sleep 300"]
       # since we're mounting a separate volume, reset permission to dremio uid/gid
       - name: chown-data-directory
         image: {{.Values.image}}:{{.Values.imageTag}}
@@ -103,10 +107,6 @@ spec:
         args:
         - "dremio:dremio"
         - "/opt/dremio/data"
-      - name: sleep-120
-        image: busybox
-        imagePullPolicy: IfNotPresent
-        command: ["sh", "-c", "sleep 120"]
       - name: upgrade-task
         image: {{.Values.image}}:{{.Values.imageTag}}
         imagePullPolicy: IfNotPresent
