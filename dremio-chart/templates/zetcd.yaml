@@ -1,12 +1,15 @@
 {{ if not .Values.DremioAdmin }}
     {{ if .Values.zetcd }}
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: etcd
 spec:
   serviceName: etcd
   replicas: 3
+  selector:
+    matchLabels:
+      app: etcd
   template:
     metadata:
       labels:
@@ -14,7 +17,7 @@ spec:
     spec:
       containers:
         - name: etcd
-          image: quay.io/coreos/etcd:v3.3.13
+          image: bitnami/etcd:3.3.13
           command:
             - /bin/sh
             - -c
@@ -51,13 +54,13 @@ spec:
               protocol: TCP
           resources:
             limits:
-              memory: 2048Mi
-              cpu: 2
+              memory: 1024Mi
+              cpu: 1000m
             requests:
               memory: 1024Mi
-              cpu: 1
+              cpu: 700m
           volumeMounts:
-            - name: zetcd-persistent-storage
+            - name: etcd-persistent-storage
               mountPath: /etcd-data
       securityContext:
         runAsUser: 100
@@ -65,20 +68,23 @@ spec:
         fsGroup: 101
   volumeClaimTemplates:
     - metadata:
-        name: zetcd-persistent-storage
+        name: etcd-persistent-storage
       spec:
         accessModes: [ReadWriteOnce]
         resources:
           requests:
-            storage: 5Gi
+            storage: 50Gi
 ---
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: zetcd
 spec:
   serviceName: zk-hs
   replicas: 1
+  selector:
+    matchLabels:
+      app: zetcd
   template:
     metadata:
       labels:
@@ -96,11 +102,11 @@ spec:
               name: zetcd
           resources:
             limits:
-              memory: 256Mi
-              cpu: 100m
+              memory: 3120Mi
+              cpu: 3000m
             requests:
-              memory: 128Mi
-              cpu: 10m
+              memory: 512Mi
+              cpu: 700m
       securityContext:
         runAsUser: 100
         runAsGroup: 101
