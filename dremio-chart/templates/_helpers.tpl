@@ -26,6 +26,6 @@ Calcuate the heap memory used by Dremio
 Calcuate the direct memory used by Dremio
 */}}
 {{- define "DirectMemory" -}}
-{{- $input := .Values.coordinator.memory -}}
-{{ sub $input 8192 }}
+{{- $input := int . -}}
+114688
 {{- end -}}
