@@ -18,7 +18,7 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 Calcuate the heap memory used by Dremio
 */}}
 {{- define "HeapMemory" -}}
-{{- $input := int . -}}
+{{- $input := int .Values.coordinator.memory -}}
 {{- if ge $input 32768 -}}
 8192
 {{- else if ge $input 16384 -}}
@@ -34,7 +34,7 @@ Calcuate the heap memory used by Dremio
 Calcuate the direct memory used by Dremio
 */}}
 {{- define "DirectMemory" -}}
-{{- $input := int . -}}
+{{- $input := int .Values.coordinator.memory -}}
 {{- if ge $input 32768 -}}
 {{ sub $input 8192 }}
 {{- else if ge $input 16384 -}}

@@ -72,7 +72,7 @@
 # Garbage collection logging is enabled by default. Set the following
 # parameter to "no" to disable garbage collection logging.
 #
-DREMIO_GC_LOGS_ENABLED="no"
+#DREMIO_GC_LOGS_ENABLED="yes"
 
 #
 # The scheduling priority for the server
