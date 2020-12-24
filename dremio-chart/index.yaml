@@ -2,47 +2,14 @@ apiVersion: v1
 entries:
   dremio-chart:
   - apiVersion: v1
-    created: "2020-12-24T09:22:04.604143-03:00"
-    digest: a62c0fc067d01a8f3944fc1c9594e85af87015422b05264441f0242f6ceeff82
+    created: "2020-12-24T10:28:42.023782-03:00"
+    digest: 480be869acc8d0bed622dc4d53dda726eaa44b824a84fe0c83019d34f01d5be4
     home: https://www.dremio.com/
     keywords:
     - dremio
     - data
     name: dremio-chart
     urls:
-    - dremio-chart-0.1.10.tgz
-    version: 0.1.10
-  - apiVersion: v1
-    created: "2020-12-24T09:22:04.609824-03:00"
-    digest: 589e76ade02c0c1f11b77d050faaa9d2197c2ba055a4dc8c7199455c6415395d
-    home: https://www.dremio.com/
-    keywords:
-    - dremio
-    - data
-    name: dremio-chart
-    urls:
-    - dremio-chart-0.1.9.tgz
-    version: 0.1.9
-  - apiVersion: v1
-    created: "2020-12-24T09:22:04.607424-03:00"
-    digest: 8470746df957699a0d4c23ec9c137b99fb9c5b44baf0002926e24248e3aca09f
-    home: https://www.dremio.com/
-    keywords:
-    - dremio
-    - data
-    name: dremio-chart
-    urls:
-    - dremio-chart-0.1.5.tgz
-    version: 0.1.5
-  - apiVersion: v1
-    created: "2020-12-24T09:22:04.606329-03:00"
-    digest: 856b44a69bbd61015d0d51598d6cddd857014f377efe82f76e1d86be0c45b7fc
-    home: https://www.dremio.com/
-    keywords:
-    - dremio
-    - data
-    name: dremio-chart
-    urls:
-    - dremio-chart-0.1.4.tgz
-    version: 0.1.4
-generated: "2020-12-24T09:22:04.599916-03:00"
+    - dremio-chart-0.1.11.tgz
+    version: 0.1.11
+generated: "2020-12-24T10:28:42.021653-03:00"

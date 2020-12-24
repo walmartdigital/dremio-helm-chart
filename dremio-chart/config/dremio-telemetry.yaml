@@ -9,4 +9,4 @@ metrics:
       Publish metrics on prometheus
     reporter:
       type: prometheus
-      port: 12543
+      port: 5556
