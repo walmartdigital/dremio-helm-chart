@@ -34,9 +34,6 @@ spec:
           requests:
             memory: {{.Values.executor.memory}}M
             cpu: {{.Values.executor.cpu}}
-          limits:
-            memory: {{.Values.executor.memoryLimit}}M
-            cpu: {{.Values.executor.cpuLimit}}
         volumeMounts:
         - name: dremio-executor-volume
           mountPath: /opt/dremio/data
