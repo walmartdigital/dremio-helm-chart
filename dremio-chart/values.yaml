@@ -16,7 +16,6 @@ coordinator:
   # The chart will always create one master coordinator - you are
   # not required to have more than one master coordinator.
   count: 0
-  metricsPort: 5556
   web:
     port: 9047
   client:
@@ -28,7 +27,6 @@ executor:
   cpu: 15
   cpuLimit: 20
   count: 3
-  metricsPort: 5556
   volumeSize: 100Gi
   cloudCache:
     # Requires Dremio version 4.0.0 or later

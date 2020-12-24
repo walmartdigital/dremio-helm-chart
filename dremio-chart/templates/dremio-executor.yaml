@@ -60,7 +60,7 @@ spec:
         ports:
         - containerPort: 45678
           name: server
-        - containerPort: {{.Values.executor.metricsPort}}
+        - containerPort: 5556
           name: metrics
       initContainers:
       - name: wait-for-zk

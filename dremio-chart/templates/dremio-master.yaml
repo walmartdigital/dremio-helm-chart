@@ -77,7 +77,7 @@ spec:
           name: client
         - containerPort: 45678
           name: server
-        - containerPort: {{.Values.executor.metricsPort}}
+        - containerPort: 5556
           name: metrics
         readinessProbe:
           httpGet:
