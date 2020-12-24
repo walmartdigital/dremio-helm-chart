@@ -34,6 +34,9 @@ spec:
           requests:
             memory: {{.Values.executor.memory}}M
             cpu: {{.Values.executor.cpu}}
+          limits:
+            memory: {{.Values.executor.memoryLimit}}M
+            cpu: {{.Values.executor.cpuLimit}}
         volumeMounts:
         - name: dremio-executor-volume
           mountPath: /opt/dremio/data
@@ -57,6 +60,8 @@ spec:
         ports:
         - containerPort: 45678
           name: server
+        - containerPort: {{.Values.executor.metricsPort}}
+          name: metrics
       initContainers:
       - name: wait-for-zk
         image: busybox
