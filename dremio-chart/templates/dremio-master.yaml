@@ -42,6 +42,9 @@ spec:
           requests:
             memory: {{.Values.coordinator.memory}}M
             cpu: {{.Values.coordinator.cpu}}
+          limits:
+            memory: {{.Values.coordinator.memoryLimit}}M
+            cpu: {{.Values.coordinator.cpuLimit}}
         volumeMounts:
         - name: dremio-master-volume
           mountPath: /opt/dremio/data
@@ -74,6 +77,8 @@ spec:
           name: client
         - containerPort: 45678
           name: server
+        - containerPort: {{.Values.coordinator.metrisPort}}
+          name: metrics
         readinessProbe:
           httpGet:
             path: /
